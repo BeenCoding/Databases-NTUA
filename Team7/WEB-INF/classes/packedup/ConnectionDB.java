@@ -1,7 +1,6 @@
 package packedup;
 
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,79 +8,78 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
 
-	/* Database connection settings, change dbName, dbusername, dbpassword */
-	private final String ipAddress = "yourIP";
-	private final String dbServerPort = "3306";
-	private final String dbName = "yourDb";
-	private final String dbusername = "yourUsername";
-	private final String dbpassword = "yourPassword";
+    /* Database connection settings, change dbName, dbusername, dbpassword */
+    private final String ipAddress = "yourIP";
+    private final String dbServerPort = "3306";
+    private final String dbName = "yourDb";
+    private final String dbusername = "yourUsername";
+    private final String dbpassword = "yourPassword";
 
 
-	
-	private Connection con = null;
-	
-	/**
-	 * Establishes a connection with the database, initializes and returns
-	 * the Connection object.
-	 * 
-	 * @return Connection, the Connection object
-	 * @throws Exception
-	 */
-	public Connection getConnection() throws Exception {
-		/* Step 1 -> Dynamically load the driver's class file into memory */
+    private Connection con = null;
 
-		try {
+    /**
+     * Establishes a connection with the database, initializes and returns
+     * the Connection object.
+     *
+     * @return Connection, the Connection object
+     * @throws Exception
+     */
+    public Connection getConnection() throws Exception {
+        /* Step 1 -> Dynamically load the driver's class file into memory */
 
-			// Dynamically load the driver's class file into memory
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+        try {
 
-		} catch (Exception e) {
+            // Dynamically load the driver's class file into memory
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-			throw new Exception("MySQL Driver error: " + e.getMessage());
-		}
+        } catch (Exception e) {
 
-		/*
-		 * Step 2 -> Establish a connection with the database and initializes
-		 * the Connection object (con)
-		 */
+            throw new Exception("MySQL Driver error: " + e.getMessage());
+        }
 
-		try {
+        /*
+         * Step 2 -> Establish a connection with the database and initializes
+         * the Connection object (con)
+         */
 
-			con = DriverManager.getConnection("jdbc:mysql://" 
-				+ ipAddress + ":" + dbServerPort + "/" + dbName, dbusername, dbpassword);
+        try {
 
-			// Step 3 -> returns the connection object
-			return con;
+            con = DriverManager.getConnection("jdbc:mysql://"
+                    + ipAddress + ":" + dbServerPort + "/" + dbName, dbusername, dbpassword);
 
-		} catch (Exception e) {
-			
-			// throw Exception if any error occurs
-			throw new Exception("Could not establish connection with the Database Server: " 
-				+ e.getMessage());
-		}
+            // Step 3 -> returns the connection object
+            return con;
 
-	} // End of getConnection
+        } catch (Exception e) {
 
-	/**
-	 * Close database connection. It is very important to close the database connection
-	 * after it is used.
-	 * 
-	 * @throws SQLException
-	 */
-	public void close() throws SQLException {
+            // throw Exception if any error occurs
+            throw new Exception("Could not establish connection with the Database Server: "
+                    + e.getMessage());
+        }
 
-		try {
+    } // End of getConnection
 
-			// if connection is (still) open
-			if (con != null)
-				con.close(); // close the connection to the database to end database session
+    /**
+     * Close database connection. It is very important to close the database connection
+     * after it is used.
+     *
+     * @throws SQLException
+     */
+    public void close() throws SQLException {
 
-		} catch (SQLException e) {
+        try {
 
-			throw new SQLException("Could not close connection with the Database Server: " 
-				+ e.getMessage());
-		}
+            // if connection is (still) open
+            if (con != null)
+                con.close(); // close the connection to the database to end database session
 
-	}// end of close
+        } catch (SQLException e) {
+
+            throw new SQLException("Could not close connection with the Database Server: "
+                    + e.getMessage());
+        }
+
+    }// end of close
 
 } // End of class

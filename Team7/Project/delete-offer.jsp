@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ page import="packedup.*"%>
+<%@ page import="packedup.*" %>
 
 <%
 
-String barcode = request.getParameter("barcode");
+    String barcode = request.getParameter("barcode");
 
-if(barcode == null) {
-	throw new Exception("Bad Request!");
-}
+    if (barcode == null) {
+        throw new Exception("Bad Request!");
+    }
 
-OffersService os = new OffersService();
+    OffersService os = new OffersService();
 
-os.deleteOffer(barcode);
+    os.deleteOffer(barcode);
 
-String url = "add-product-shop.jsp?barcode="+barcode;
+    String url = "add-product-shop.jsp?barcode=" + barcode;
 
-response.sendRedirect(url);
+    response.sendRedirect(url);
 %>

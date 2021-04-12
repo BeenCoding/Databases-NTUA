@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ page import="packedup.*"%>
+<%@ page import="packedup.*" %>
 
 <%
 
-String shopid = request.getParameter("storeId");
+    String shopid = request.getParameter("storeId");
 
-if(shopid == null) {
-	throw new Exception("Bad Request!");
-}
-StoreService storeservice = new StoreService();
+    if (shopid == null) {
+        throw new Exception("Bad Request!");
+    }
+    StoreService storeservice = new StoreService();
 
-storeservice.deleteStore(shopid);
+    storeservice.deleteStore(shopid);
 
-response.sendRedirect("shops.jsp");
+    response.sendRedirect("shops.jsp");
 
 %>

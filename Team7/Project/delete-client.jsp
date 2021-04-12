@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ page import="packedup.*"%>
+<%@ page import="packedup.*" %>
 
 <%
 
-String card = request.getParameter("cardId");
+    String card = request.getParameter("cardId");
 
-if(card == null) {
-	throw new Exception("Bad Request!");
-}
+    if (card == null) {
+        throw new Exception("Bad Request!");
+    }
 
-CustomerService custservice = new CustomerService();
+    CustomerService custservice = new CustomerService();
 
-custservice.deleteCustomer(card);
+    custservice.deleteCustomer(card);
 
-response.sendRedirect("clients.jsp");
+    response.sendRedirect("clients.jsp");
 
 %>

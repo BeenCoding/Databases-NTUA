@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@ page import="packedup.*"%>
+<%@ page import="packedup.*" %>
 
 <%
 
-String barcode = request.getParameter("barcode");
+    String barcode = request.getParameter("barcode");
 
-if(barcode == null) {
-	throw new Exception("Bad Request!");
-}
+    if (barcode == null) {
+        throw new Exception("Bad Request!");
+    }
 
-HistoryService hs = new HistoryService();
+    HistoryService hs = new HistoryService();
 
-hs.deleteHistory(barcode);
+    hs.deleteHistory(barcode);
 
-String url = "product-history.jsp?barcode="+barcode;
+    String url = "product-history.jsp?barcode=" + barcode;
 
-response.sendRedirect(url);
+    response.sendRedirect(url);
 %>
