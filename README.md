@@ -1,6 +1,14 @@
 # Databases Project - NTUA
 Part of this course was a team project. The project was about shopping basket analysis and from the assignment [given](https://github.com/BeenCoding/Db-Project-NTUA/blob/master/group%20project%202020.pdf), we had to construct the ER-Diagram. After constructing the ERD we had to build the Relational Diagram and then proceed to the creation of the database using MySQL. When the database was built, we needed to fill in all tables with *valid* data. Next step was building the web app(both backend and frontend) as well as connecting the database with the site.
 
+<p align="center">
+	<img alt="Byte Code Size" src="https://img.shields.io/github/languages/code-size/ChristosHadjichristofi/Databases-NTUA?color=red" />
+	<img alt="# Lines of Code" src="https://img.shields.io/tokei/lines/github/ChristosHadjichristofi/Databases-NTUA?color=red" />
+	<img alt="# Languages Used" src="https://img.shields.io/github/languages/count/ChristosHadjichristofi/Databases-NTUA?color=yellow" />
+	<img alt="Top language" src="https://img.shields.io/github/languages/top/ChristosHadjichristofi/Databases-NTUA?color=yellow" />
+	<img alt="Last commit" src="https://img.shields.io/github/last-commit/ChristosHadjichristofi/Databases-NTUA?color=important" />
+</p>
+
 The report that we handed in for this project can be found [here](https://github.com/BeenCoding/Db-Project-NTUA/blob/master/Databases%20Report%20Team7.pdf).
 ## _Technologies Used_
   * In order to create the front-end Bootstrap Studio was used.
